@@ -10,6 +10,18 @@ get '/posts' do
   erb :posts
 end
 
+
+# wire up login link
+# user login page
+get '/login' do
+  erb :login_user
+end
+
+# user create page
+get '/users/new' do
+  erb :create_user
+end
+
 # specific post page
 get '/posts/:id' do
   @post = Post.find(params[:id])
@@ -35,15 +47,6 @@ get '/users/:id/posts' do
   erb :user_posts
 end
 
-# user create page
-get '/users/new' do
-  # erb create_user
-end
-
-# user login page
-get '/users/login' do
-  # erb login_user
-end
 
 ### POST ###
 
@@ -53,7 +56,7 @@ post '/users' do
 end
 
 # login user
-post '/users/login' do
+post '/login' do
   # query for user with login and password
   # store id into session
 end
