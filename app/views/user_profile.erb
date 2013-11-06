@@ -1,0 +1,8 @@
+<div class="container">
+  <h1><%= @user.username %></h1>
+  <span>Member since <%= @user.created_at %></span>
+  <br />
+  <a href="/users/<%= @user.id %>/posts"><%= @user.posts.count %> posts</a>
+  <a href="/users/<%= @user.id %>/comments"><%= @user.comments.count %> comments</a>
+
+</div>
