@@ -1,0 +1,10 @@
+<div class='container'>
+  <ul>
+  <% @user.posts.each do |post| %>
+    <li>
+      <a href="<%= post.link %>"><%= post.title %></a><br />
+      <a href="/posts/<%= post.id %>">Comments</a>
+    </li>
+  <% end %>
+  </ul>
+</div>

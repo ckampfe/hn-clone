@@ -21,18 +21,18 @@ end
 get '/users/:id' do
   @user = User.find(params[:id])
   erb :user_profile
-  # query for posts with submitter_id == params[:id], return count
-  # query for comements with user_id == params[:id], return count
 end
 
 # user comments profile
 get '/users/:id/comments' do
-  # query for comments with user_id == params[:id], return all
+  @user = User.find(params[:id])
+  erb :user_comments
 end
 
 # user comments profile
 get '/users/:id/posts' do
-  # query for posts with submitter_id == params[:id], return all
+  @user = User.find(params[:id])
+  erb :user_posts
 end
 
 # user create page
