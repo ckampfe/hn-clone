@@ -49,6 +49,11 @@ get '/users/:id/posts' do
   erb :user_posts
 end
 
+get '/logout' do
+  session.clear
+  erb :posts
+end
+
 
 ### POST ###
 

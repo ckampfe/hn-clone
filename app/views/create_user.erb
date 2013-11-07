@@ -1,4 +1,4 @@
-<div class='containter'>
+<div class='container'>
   <form action='/users' method='POST'>
     <input type="text" name="user[username]">
     <input type="text" name="user[password]">
@@ -8,5 +8,4 @@
   <% if @username_taken %>
     <p> That username already exists! Please choose another username.</p>
   <% end %>
-
 </div>
