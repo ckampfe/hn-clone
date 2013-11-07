@@ -62,10 +62,12 @@ post '/users' do
 
   user = User.where(username: username)
 
-  if user.empty?
-    User.create(params[:user])
-    # W I P
-  else
+  if user.empty? # NOT IN DATABASE
+    u = User.create(params[:user])
+    session[:user_id] = u.id
+    puts session[:user_id]
+    erb :posts
+  else # IN DATABASE
     @username_taken = true
     erb :create_user
   end
