@@ -30,3 +30,15 @@ th {
 .link-padding {
   padding: 4px;
 }
+
+.full-width {
+  width: 98%;
+}
+
+textarea {
+  resize: none;
+}
+
+.bigger-padding {
+  padding: 15px;
+}

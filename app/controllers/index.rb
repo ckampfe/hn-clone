@@ -102,6 +102,6 @@ end
 
 # create comment
 post '/post/:id' do
-  # Comment.create( ... )
-  # erb 'posts/:id'
+  User.find(session[:user_id]).comments << Comment.create(post_id: params[:id], body: params[:body])
+  redirect to "posts/#{params[:id]}"
 end

@@ -2,6 +2,12 @@
 
   <h2><a href="<%= @post.link %>"><%= @post.title %></a></h2>
   <h3><a href="/users/<%= @post.user_id %>"><%= @post.user.username %></a></h3>
+
+  <form action="/post/<%= @post.id %>" method="post">
+    <textarea name="body" placeholder="Your comment..." class="link-padding full-width"></textarea>
+    <input type="submit" value="post comment" >
+  </form>
+
   <ul>
   <% @comments.each do |comment| %>
     <li>
