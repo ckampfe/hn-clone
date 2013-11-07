@@ -17,8 +17,10 @@ get '/login' do
   erb :login_user
 end
 
+# wire up create account link
 # user create page
 get '/users/new' do
+  @username_taken = false
   erb :create_user
 end
 
@@ -52,7 +54,21 @@ end
 
 # create user
 post '/users' do
-  # query User.new( ... )
+  username = params[:user][:username]
+  password = params[:user][:password]
+  puts username
+  puts password
+
+
+  user = User.where(username: username)
+
+  if user.empty?
+    User.create(params[:user])
+    # W I P
+  else
+    @username_taken = true
+    erb :create_user
+  end
 end
 
 # login user
