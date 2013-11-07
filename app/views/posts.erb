@@ -1,6 +1,6 @@
 <div class='container'>
   <ul>
-  <% Post.all.each do |post| %>
+  <% Post.all.reverse.each do |post| %>
     <li>
       <a href="<%= post.link %>"><%= post.title %></a><br />
       <a href="/posts/<%= post.id %>">Comments</a>
