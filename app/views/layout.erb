@@ -22,11 +22,12 @@
     <a href="/" class="white link-padding">Hacker News!</a> 
 
     <% if !session[:user_id].nil? %>
+      <a href="/logout" class="white float-right link-padding">logout</a>
       <a href="/users/<%= session[:user_id] %>" class="white float-right link-padding"><%= User.find(session[:user_id]).username %></a>
-      <a href="/logout" class="white float-right link-padding">Logout</a>
+      <a href="/posts/new" class="white float-right link-padding">create post</a>
     <% else %>
-      <a href="/login" class="white float-right link-padding">Login</a>
-      <a href="/users/new" class="white float-right link-padding">Create account</a>
+      <a href="/login" class="white float-right link-padding">login</a>
+      <a href="/users/new" class="white float-right link-padding">create account</a>
     <% end %>
   </div>
   <%= yield %>

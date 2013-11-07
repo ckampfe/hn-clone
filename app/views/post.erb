@@ -1,6 +1,7 @@
 <div class='container'>
 
   <h2><a href="<%= @post.link %>"><%= @post.title %></a></h2>
+  <h3><a href="/users/<%= @post.user_id %>"><%= @post.user.username %></a></h3>
   <ul>
   <% @comments.each do |comment| %>
     <li>
