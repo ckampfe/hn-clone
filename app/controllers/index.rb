@@ -81,6 +81,14 @@ end
 # login user
 post '/login' do
   # query for user with login and password
+  user = User.where(username: params[:username])[0]
+  if !user.nil? && user.password == params[:password]
+    session[:user_id] = user.id # log me in
+    erb :posts
+  else
+    @invalid_login = true
+    erb :login_user # try again
+  end
   # store id into session
 end
 

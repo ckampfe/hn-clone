@@ -1,7 +1,11 @@
-<div class='containter'>
+<div class='container'>
   <form action='/login' method='POST'>
     <input type="text" name="username">
     <input type="text" name="password">
     <input type="submit" value="Login"> 
   </form>
+
+  <% if @invalid_login %>
+    <p>Invalid username or password. Please try again.</p>
+  <% end %>
 </div>
