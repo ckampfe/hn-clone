@@ -18,6 +18,17 @@
   <title></title>
 </head>
 <body>
+  <div class="navbar bar">
+    <a href="/" class="white link-padding">Hacker News!</a> 
+
+    <% if !session[:user_id].nil? %>
+      <a href="/users/<%= session[:user_id] %>" class="white float-right link-padding"><%= User.find(session[:user_id]).username %></a>
+      <a href="/logout" class="white float-right link-padding">Logout</a>
+    <% else %>
+      <a href="/login" class="white float-right link-padding">Login</a>
+      <a href="/users/new" class="white float-right link-padding">Create account</a>
+    <% end %>
+  </div>
   <%= yield %>
 </body>
 </html>
